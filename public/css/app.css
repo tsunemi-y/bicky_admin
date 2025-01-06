@@ -9,6 +9,7 @@ header {
 .container-fluid {
     height: 100vh;
     background-color: #f4f6f9;
+    padding-left: 30px !important;
 }
 
 #sidebar {
