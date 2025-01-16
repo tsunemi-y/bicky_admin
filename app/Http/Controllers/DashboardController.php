@@ -8,7 +8,6 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        \Log::debug('デバッグメッセージ');
         return view('dashboard.index');
     }
 }

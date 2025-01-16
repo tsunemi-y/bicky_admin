@@ -10,7 +10,7 @@
                 <i class="fas fa-chart-pie"></i> グラフ
             </a>
             <ul class="collapse" id="charts">
-                <li><a href="#" class="nav-link">Chart 1</a></li>
+                <li><a href="{{ route('chart.sales') }}" class="nav-link">売上</a></li>
                 <li><a href="#" class="nav-link">Chart 2</a></li>
             </ul>
         </li>
