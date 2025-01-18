@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ChartController;
+use App\Http\Controllers\ReservationController;
 
 Route::get('/', [DashboardController::class, 'index']);
 Route::get('/reservation', function(){
@@ -10,3 +11,6 @@ Route::get('/reservation', function(){
 });
 
 Route::get('/chart/sales', [ChartController::class, 'sales'])->name('chart.sales');
+
+Route::get('/reservation/show', [ReservationController::class, 'show'])
+    ->name('reservation.show');
