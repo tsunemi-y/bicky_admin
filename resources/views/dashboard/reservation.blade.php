@@ -16,7 +16,7 @@
         @if(isset($reservationSearch))
             @foreach($reservationSearch as $reservation)
             <tr height="28px" align="left">
-              <td>{{ $reservation->childName }}</td>
+              <td>{{ $reservation->parentName }}</td>
               <td>{{ $reservation->reservation_date }}</td>
             </tr>
             @endforeach
