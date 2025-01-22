@@ -77,4 +77,12 @@ header {
     border-bottom: 2px solid lightgray;
 }
 
+.deleteBtn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
 

@@ -15,13 +15,29 @@
         <tr height="28px" align="left"><th>氏名</th><th>予約日</th></tr>
         @if(isset($reservationSearch))
             @foreach($reservationSearch as $reservation)
-            <tr height="28px" align="left">
+            <tr align="left" height="28px">
               <td>{{ $reservation->parentName }}</td>
               <td>{{ $reservation->reservation_date }}</td>
+              <form method="post" action="{{ route('reservation.delete', 
+              ['id' => $reservation->user_id]) }}">
+                @csrf
+                @method('delete')
+                <td><button type="submit" class="deleteBtn">削除</button></td>
+              </form>
             </tr>
             @endforeach
         @endif
       </table>
     </div>
   </div>
+
+  <script type="text/javascript">
+  $('.deleteBtn').click(function(){
+    if(!confirm('予約者 日時をキャンセルします。ほんとうによろしいですか?')){
+        return false;
+    }else{
+        return true;
+    }
+  });
+</script>
 @endsection

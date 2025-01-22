@@ -18,4 +18,9 @@ class ReservationService
         $reservationList = $this->reservationRepository->reservationSearch($query);
         return $reservationList;
     }
+
+    public function deleteReservation($id)
+    {
+        $this->reservationRepository->reservationDelete($id);
+    }
 }
