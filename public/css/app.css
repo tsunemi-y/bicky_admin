@@ -75,11 +75,13 @@ header {
 
 .reservation-table th, .reservation-table td {
     border-bottom: 2px solid lightgray;
+    padding: 8px;
 }
 
 .deleteBtn {
     background-color: #dc3545;
     color: white;
+    font-size: 12px;
     border: none;
     border-radius: 5px;
     padding: 5px 10px;

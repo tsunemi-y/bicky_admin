@@ -6,7 +6,7 @@
 <div class="container-reservation">
     <h2 class="reservation-h2">利用者氏名</h2>
     <form method="get" action="{{ route('reservation.show') }}" class="reservation-form">
-      <input type="serch" class="reservation-search">
+      <input type="serch" name="query" value="{{ $query ?? '' }}" class="reservation-search">
       <button type="submit" class="reservation-search-button"><img src="{{ asset('images/search-icon.png') }}" width="20" height="20"></button>
     </form>
     <div class="reservation-table">
@@ -19,25 +19,27 @@
               <td>{{ $reservation->parentName }}</td>
               <td>{{ $reservation->reservation_date }}</td>
               <form method="post" action="{{ route('reservation.delete', 
-              ['id' => $reservation->user_id]) }}">
+              ['id' => $reservation->id]) }}">
                 @csrf
                 @method('delete')
-                <td><button type="submit" class="deleteBtn">削除</button></td>
+                <td><button type="submit" class="deleteBtn">予約キャンセル</button></td>
               </form>
             </tr>
+
+            <script type="text/javascript">
+              $('.deleteBtn').click(function(){
+                if (!confirm('{{ $reservation->parentName }} {{ $reservation->reservation_date }} をキャンセルします。ほんとうによろしいですか?')){
+                    return false;
+                }else {
+                    return true;
+                }
+              });
+            </script>
             @endforeach
         @endif
       </table>
     </div>
   </div>
 
-  <script type="text/javascript">
-  $('.deleteBtn').click(function(){
-    if(!confirm('予約者 日時をキャンセルします。ほんとうによろしいですか?')){
-        return false;
-    }else{
-        return true;
-    }
-  });
-</script>
+  
 @endsection

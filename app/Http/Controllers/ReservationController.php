@@ -17,7 +17,7 @@ class ReservationController extends Controller
     {
         $query = $request->input('query');
         $reservationSearch = $this->reservationService->getReservationList($query);
-        return view('dashboard.reservation', compact('reservationSearch'));   
+        return view('dashboard.reservation', compact('reservationSearch', 'query'));   
     }
 
     public function delete($id)
