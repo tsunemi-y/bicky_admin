@@ -1,21 +1,21 @@
 @extends('layouts.main')
 
-@section('title', 'グラフ > 売上')
+@section('title', 'グラフ > 新規登録者数')
 
 @section('content')
     <div class="mt-4">
-        <h1>グラフ > 売上</h1>
-        <canvas id="myChart"></canvas>
+        <h1>グラフ > 新規登録者数</h1>
+        <canvas id="registrationChart"></canvas>
     </div>
 @endsection
 
 @section('script')
-    <script src="{{ asset('js/chart/sales.js') }}"></script>
+    <script src="{{ asset('js/chart/registration.js') }}"></script>
 @endsection
 
 <script>
     var year = @json($year);
     var months = @json($months);
-    var totalSales = @json($totalSales);
+    var totalRegistration = @json($totalRegistration);
 </script>
 

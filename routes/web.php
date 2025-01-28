@@ -12,6 +12,8 @@ Route::get('/reservation', function(){
 
 Route::get('/chart/sales', [ChartController::class, 'sales'])->name('chart.sales');
 
+Route::get('/chart/registration', [ChartController::class, 'registration'])->name('chart.registration');
+
 Route::get('/reservation/show', [ReservationController::class, 'show'])
     ->name('reservation.show');
 Route::delete('/reservation/delete{id}', [ReservationController::class, 'delete'])
