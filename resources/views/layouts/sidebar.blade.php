@@ -11,7 +11,7 @@
             </a>
             <ul class="collapse" id="charts">
                 <li><a href="{{ route('chart.sales') }}" class="nav-link">売上</a></li>
-                <li><a href="#" class="nav-link">Chart 2</a></li>
+                <li><a href="{{ route('chart.registration') }}" class="nav-link">新規登録者</a></li>
             </ul>
         </li>
         <li class="nav-item">

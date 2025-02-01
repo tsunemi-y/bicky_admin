@@ -21,4 +21,18 @@ class SalesRepository
         
         return $salesData;
     }
+
+    public function getAllRegistration($year)
+    {
+        $registrations = DB::select('
+            SELECT 
+                TO_CHAR(created_at, \'MM\') AS month,
+                COUNT(id) AS total_registration
+            FROM users
+            WHERE TO_CHAR(created_at, \'YYYY\') = :year
+            GROUP BY TO_CHAR(created_at, \'MM\')
+        ', ['year' => $year]);
+        
+        return $registrations;
+    }
 }

@@ -23,4 +23,15 @@ class ChartController extends Controller
 
         return view('chart.sales', compact('year', 'months', 'totalSales'));
     }
+
+    public function registration()
+    {
+        $year = request()->input('year', date('Y'));
+
+        $registrations = $this->chartService->getRegistration($year);
+
+        list($months, $totalRegistration) = $this->chartService->extractMonthAndRegistration($registrations);
+        
+        return view('chart.registration', compact('year', 'months', 'totalRegistration'));
+    }
 }
