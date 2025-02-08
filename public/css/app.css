@@ -33,15 +33,9 @@ header {
     height: 36px;
 }
 
-.container-reservation {
-    background-color: rgb(236, 236, 245);
-    text-align: center;
-    padding: 10px;
-}
-
-
 .reservation-h2 {
-    margin: 40px 0;
+    margin: 40px auto;
+    text-align: center;
 }
 
 .reservation-hamburger {
@@ -86,5 +80,6 @@ header {
     border-radius: 5px;
     padding: 5px 10px;
 }
+
 
 

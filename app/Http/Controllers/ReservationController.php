@@ -17,12 +17,14 @@ class ReservationController extends Controller
     {
         $query = $request->input('query');
         $reservationSearch = $this->reservationService->getReservationList($query);
-        return view('dashboard.reservation', compact('reservationSearch', 'query'));   
-    }
+        // return view('dashboard.reservation', compact('reservationSearch', 'query'));
+        return response()->json($reservationSearch);
+    }   
+    
 
     public function delete($id)
     {
         $this->reservationService->deleteReservation($id);
-        return redirect()->route('reservation.show');
+        return response()->json(['success' => true]);    
     }
 }
